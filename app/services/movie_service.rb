@@ -4,7 +4,7 @@ class MovieService
     end
 
     def get_url(url)
-        response = connection.url)
+        response = connection.get(url)
         x = JSON.parse(response.body, symbolize_names: true)
         binding.pry
     end
