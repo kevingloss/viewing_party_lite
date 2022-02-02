@@ -7,7 +7,7 @@ describe 'Discover Page' do
         @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
     end
 
-    it 'should list out all users' do
+    it 'should have the app name and discover movies' do
         visit user_discover_index_path(@kevin)
 
         expect(page).to have_content("Viewing Party Lite")
