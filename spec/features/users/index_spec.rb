@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'Landing Page' do
-    before :each do 
+RSpec.describe 'Landing Page' do
+    before :each do
         @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com')
         @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com')
         @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')

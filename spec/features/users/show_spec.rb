@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User Show Page' do
+RSpec.describe 'User Show Page' do
     before :each do
         @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com')
         @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com')

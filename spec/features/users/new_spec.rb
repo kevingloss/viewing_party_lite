@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'New User' do
-    before :each do 
+RSpec.describe 'New User' do
+    before :each do
         @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com')
         @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com')
         @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
@@ -16,27 +16,27 @@ describe 'New User' do
     end
 
     it "can create a new user with valid input" do
-        visit new_user_path 
+        visit new_user_path
 
         fill_in(:user_name, with: 'John')
         fill_in(:user_email, with: 'john@gmail.com')
         click_button 'Create User'
 
         user = User.find_by(name: 'John')
-        
+
         expect(current_path).to eq(user_path(user))
         expect(page).to have_content(user.name)
     end
 
     it "has a sad path for invalid data" do
-        visit new_user_path 
+        visit new_user_path
 
         fill_in(:user_name, with: 'John')
         fill_in(:user_email, with: 'johnnyboy')
         click_button 'Create User'
 
         user = User.find_by(name: 'John')
-        
+
         expect(current_path).to eq(new_user_path)
         expect(page).to have_content(["Email is invalid"])
     end
@@ -48,5 +48,5 @@ describe 'New User' do
 
         expect(current_path).to eq(root_path)
     end
-    
+
 end
