@@ -16,7 +16,7 @@ RSpec.describe 'Movies index' do
     expect(current_path).to eq(user_movies_path(@eldridge))
   end
 
-  it 'top rated movies', :vcr do 
+  it 'top rated movies' do 
     visit user_discover_index_path(@eldridge)
 
     click_button("Top Rated Movies")
