@@ -41,6 +41,7 @@ group :development, :test do
   gem 'faraday'
   gem 'net-http'
   gem 'email_validator'
+  gem 'figaro'
 end
 
 group :development do
@@ -48,7 +49,6 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop-rails'
-  gem 'figaro'
 end
 
 group :test do 

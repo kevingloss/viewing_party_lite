@@ -7,17 +7,17 @@ describe 'Discover Page' do
         @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
     end
 
-    it 'should list out all users' do
+    it 'should have the app name and discover movies' do
         visit user_discover_index_path(@kevin)
 
         expect(page).to have_content("Viewing Party Lite")
         expect(page).to have_content("Discover Movies")
     end
 
-    it 'has link from top rated movies page' do
+    it 'has link from top rated movies page', :vcr do
+      visit user_discover_index_path(@eldridge)
 
-      visit user_movies_path(@eldridge)
-
+      click_button('Top Rated Movies')
       click_button('Discover Page')
 
       expect(current_path).to eq(user_discover_index_path(@eldridge))
