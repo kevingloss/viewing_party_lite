@@ -2,9 +2,8 @@ class MoviesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-# binding.pry
     @movies = facade.search_filter(params[:filter])
-    
+    # binding.pry
   end
 
   def facade 

@@ -1,14 +1,20 @@
 class MovieFacade 
     def search_filter(filter)
         if filter == 'top_rated'
-            service.top_rated_movies
+            find_top_rated_movies
         elsif filter
-            # put in service.search feature
+            search_movies(filter)
         end
     end
 
-    def top_rated_movies 
+    def find_top_rated_movies 
         service.top_rated_movies.map do |data|
+            Movie.new(data)
+        end
+    end
+
+    def search_movies(keyword)
+        service.search_title(keyword).map do |data|
             Movie.new(data)
         end
     end
