@@ -9,7 +9,7 @@ class MovieService
         JSON.parse(response.body, symbolize_names: true)
     end
 
-    def movies 
+    def top_rated_movies 
         get_url('movie/top_rated')
     end
 end
