@@ -1,12 +1,11 @@
 class MovieService 
     def connection 
-        Faraday.new(url: 'https://api.themoviedb.org/3/', params: {api_key: ENV['api_key']})
+        Faraday.new(url: 'https://api.themoviedb.org/3/', params: {api_key: ENV['movie_api_key']})
     end
 
     def get_url(url)
         response = connection.get(url)
-        x = JSON.parse(response.body, symbolize_names: true)
-        binding.pry
+        JSON.parse(response.body, symbolize_names: true)
     end
 
     def top_rated_movies 
