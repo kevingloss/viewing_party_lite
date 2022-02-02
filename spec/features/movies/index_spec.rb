@@ -7,7 +7,7 @@ RSpec.describe 'Movies index' do
     @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
   end
 
-  it 'has link to discover path' do
+  it 'has link to discover path', :vcr do
 
     visit user_discover_index_path(@eldridge)
 
@@ -21,6 +21,18 @@ RSpec.describe 'Movies index' do
 
     click_button("Top Rated Movies")
     
-    expect(page).to have_content("Your Eyes Tell")
+    within("#movie-730154") do 
+      expect(page).to have_content("Your Eyes Tell")
+      expect(page).to have_content("Vote Average: 8.8")
+    end
+  end
+
+  it 'can search by title', :vcr do 
+    visit user_discover_index_path(@eldridge)
+
+    fill_in(:filter, with: 'Godfather')
+    click_on :search 
+
+    expect(page).to have_content('Godfather I')
   end
 end

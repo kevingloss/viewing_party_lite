@@ -4,7 +4,7 @@ RSpec.describe Movie do
 
   it 'has attributes' do
     data = {
-      movie_id: 1,
+      id: 1,
       title: "pirates",
       overview: "Story about pirates",
       vote_average: 9,
