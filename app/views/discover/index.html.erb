@@ -1,4 +1,4 @@
 <h1>Viewing Party Lite</h1>
 <h2>Discover Movies</h2>
 
-<%= button_to "Top Rated Movies", user_movies_path(@user), method: :get %>
+<%= button_to "Top Rated Movies", user_movies_path(@user), method: :get, params: [filter: 'Top Rated'] %>

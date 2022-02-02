@@ -33,4 +33,4 @@ coverage/.last_run.json
 /coverage
 
 # Ignore application configuration
-/config/application.yml
+
