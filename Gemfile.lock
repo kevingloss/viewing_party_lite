@@ -260,7 +260,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.2)
   email_validator
-  faraday
+  faraday (>= 1.8.0)
   figaro
   jbuilder (~> 2.5)
   launchy
