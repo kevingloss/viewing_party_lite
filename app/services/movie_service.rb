@@ -2,7 +2,7 @@ class MovieService < ApiService
   class << self
     def top_rated_movies
       response = connection.get("/movie/top_rated")
-      parse_json(response)
+      parse_json(response)[:results]
 
         # movies = []
         # page = 1
@@ -20,7 +20,7 @@ class MovieService < ApiService
             faraday.params['query'] = keyword
         end
         # binding.pry
-        data = parse_json(response)
+        data = parse_json(response)[:results]
         
 # need to update to max 40 results (add page 1 & 2 together?)
     #   if data[:total_results] <= 20 
