@@ -1,11 +1,11 @@
 class MovieFacade
+  class << self
+    def find_top_rated_movies
+        service = MovieService.top_rated_movies
 
-    def self.find_top_rated_movies
-      service = MovieService.top_rated_movies
-
-      service[:results].map do |data|
-        Movie.new(data)
-      end
+        service[:results].map do |data|
+            Movie.new(data)
+        end
     end
 
     def search_movies(keyword)
@@ -23,4 +23,5 @@ class MovieFacade
             Movie.new(data)
         end
     end
+  end
 end
