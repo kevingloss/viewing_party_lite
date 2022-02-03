@@ -16,23 +16,31 @@ RSpec.describe 'Movies index' do
     expect(current_path).to eq(user_movies_path(@eldridge))
   end
 
-  it 'top rated movies', :vcr do 
+  it 'top rated movies', :vcr do
     visit user_discover_index_path(@eldridge)
 
     click_button("Top Rated Movies")
-    
-    within("#movie-730154") do 
+
+    within("#movie-730154") do
       expect(page).to have_content("Your Eyes Tell")
       expect(page).to have_content("Vote Average: 8.8")
     end
   end
 
-  it 'can search by title', :vcr do 
+  it 'can search by title', :vcr do
     visit user_discover_index_path(@eldridge)
 
     fill_in(:filter, with: 'Godfather')
-    click_on :search 
+    click_on :search
 
     expect(page).to have_content('Godfather I')
+  end
+
+  it 'has links to movie show page', :vcr do
+    visit "users/#{@kevin.id}/movies?filter=top_rated"
+
+    click_on "Your Eyes Tell"
+
+    expect(current_path).to eq(user_movie_path(@kevin, 730154))
   end
 end

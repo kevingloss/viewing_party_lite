@@ -1,4 +1,4 @@
-class MovieFacade 
+class MovieFacade
     def search_filter(filter)
         if filter == 'top_rated'
             find_top_rated_movies
@@ -7,7 +7,7 @@ class MovieFacade
         end
     end
 
-    def find_top_rated_movies 
+    def find_top_rated_movies
         service.top_rated_movies.map do |data|
             Movie.new(data)
         end
@@ -19,7 +19,13 @@ class MovieFacade
         end
     end
 
-    def service 
+    def movie_details(movie_id)
+      service.find_movie(movie_id).map do |data|
+        Movie.new(data)
+      end
+    end
+
+    def service
         MovieService.new
     end
 end
