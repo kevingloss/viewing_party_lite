@@ -6,7 +6,6 @@ RSpec.describe 'Movie Detail Service' do
           movie = MovieDetailService.find_movie(49051)
           expect(movie).to be_a(Hash)
           expect(movie.count).to eq(1)
-          # binding.pry 
           expect(movie).to have_key(:id)
           expect(movie).to have_key(:title)
           expect(movie).to have_key(:genres)
