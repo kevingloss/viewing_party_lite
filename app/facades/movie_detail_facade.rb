@@ -3,9 +3,7 @@ class MovieDetailFacade
       def movie_details(movie_id)
           response = MovieDetailService.find_movie(movie_id)
           
-          response.map do |data|
-              MovieDetail.new(data)
-          end
+          MovieDetail.new(response)
       end
     end
   end
