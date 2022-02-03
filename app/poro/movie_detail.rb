@@ -4,7 +4,8 @@ class MovieDetail
                 :genres,
                 :overview,
                 :vote_average,
-                :runtime
+                :runtime,
+                :poster_path
   
     def initialize(data)
       @id = data[:id]
@@ -13,6 +14,7 @@ class MovieDetail
       @runtime = data[:runtime]
       @overview = data[:overview]
       @vote_average = data[:vote_average]
+      @poster_path = "https://image.tmdb.org/t/p/original#{data[:poster_path]}"
     end
 
     def genre_names(data)
