@@ -18,6 +18,7 @@ RSpec.describe Movie do
     expect(movie).to be_a(Movie)
     expect(movie.title).to eq('pirates')
     expect(movie.id).to eq(1)
-    expect(movie.genre).to eq('adventure')
+    expect(movie.overview).to eq("Story about pirates")
+    expect(movie.vote_average).to eq(9)
   end
 end
