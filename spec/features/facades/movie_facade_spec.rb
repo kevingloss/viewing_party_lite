@@ -12,7 +12,7 @@ RSpec.describe MovieFacade do
   end
 
   it 'creates movie poros by searching', :vcr do 
-    movies = MovieFacade.find_top_rated_movies
-    expect(movies.count).to be <= 40
+    movies = MovieFacade.search_movies('The')
+    expect(movies.count).to eq(40)
   end
 end

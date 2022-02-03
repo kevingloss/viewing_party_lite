@@ -10,6 +10,7 @@ RSpec.describe 'Movie Service' do
 
         it 'searches for movies', :vcr do
           movies = MovieService.search_title('The Godfather')
+
           expect(movies[0][:title]).to eq('The Godfather')
           expect(movies[0]).to be_a(Hash)
           expect(movies[0]).to have_key(:id)
