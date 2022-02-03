@@ -52,11 +52,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ee329e7867e2d3224fe24c26277b115a.cloudfront.net (CloudFront)
+      - 1.1 ad82d8a3c91257adecf18541576c7e72.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SFO53-C1
       X-Amz-Cf-Id:
-      - CxwU4R2CFUmfNerFma7SxMSRk0XEUL_Ai5zgXYKrWQNOVuFQxkR3zg==
+      - LiiPZp2z7pyeY5LIDhxeqOx8nmGd5vp0EZbGDBjE5M0NFA65YKLAeA==
       Age:
       - '1728'
     body:
@@ -125,11 +125,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f2ad9d6c3218f50a68fdbc2b2af517aa.cloudfront.net (CloudFront)
+      - 1.1 ca38026a6de2ccb3904aed4709dff3d0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SFO53-C1
       X-Amz-Cf-Id:
-      - m2DtZILoao4tooyPFNr9a2He0v75CzjZ4ofQzk6OF2v3otlznU-Z5Q==
+      - y8-KNyQEUWHUsrtV4Jv5F8VkvweNT8UmX0KUs-BAZOgatKSHeH3nAA==
       Age:
       - '466'
     body:
