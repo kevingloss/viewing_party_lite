@@ -1,7 +1,7 @@
 class MovieService < ApiService
   class << self
     def top_rated_movies
-      response = connection.get("/movie/top_rated")
+      response = connection.get('movie/top_rated')
       parse_json(response)[:results]
 
         # movies = []
@@ -16,7 +16,7 @@ class MovieService < ApiService
     end
 
     def search_title(keyword)
-        response = connection.get("/search/movie") do |faraday|
+        response = connection.get('search/movie') do |faraday|
             faraday.params['query'] = keyword
         end
         # binding.pry
