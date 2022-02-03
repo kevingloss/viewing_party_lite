@@ -13,9 +13,5 @@ RSpec.describe 'Movie Service' do
           service = MovieService.search_title('The Godfather')
           expect(service[:results][0][:title]).to eq('The Godfather')
         end
-
-        it 'finds a movie' do 
-
-        end
     end
 end
