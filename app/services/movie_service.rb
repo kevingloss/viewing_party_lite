@@ -1,21 +1,32 @@
-class MovieService 
-    def connection 
-        Faraday.new(url: 'https://api.themoviedb.org/3/', params: {api_key: ENV['movie_api_key']})
+class MovieService < ApiService
+  class << self
+    def top_rated_movies
+        movies = []
+        page = 1
+        while movies.count < 40
+            response = connection.get("movie/top_rated?page=#{page}")
+            data = parse_json(response)
+            movies += (data[:results])
+            page += 1
+        end
+        movies.take(40)
     end
 
-    def get_url(url)
-        response = connection.get(url)
-        JSON.parse(response.body, symbolize_names: true)
-    end
-    # need to update to max 40 results (add page 1 & 2 together?)
-    def top_rated_movies 
-        data = get_url('movie/top_rated?language=en-US')
-        data[:results]
-    end
-    
-    # need to update to max 40 results (add page 1 & 2 together?)
     def search_title(keyword)
-        data = get_url("search/movie?language=en-US&query=#{keyword}&page=1&include_adult=false")
-        data[:results]
+      response = connection.get('search/movie') do |faraday|
+          faraday.params['query'] = keyword
+      end
+      data = parse_json(response)
+
+      if data[:results].count == data[:total_results] 
+        movies = data[:results]
+      elsif data[:results].count <= 40
+        response_2 = connection.get("search/movie?page=2") do |faraday|
+            faraday.params['query'] = keyword
+        end
+        data_2 = parse_json(response_2)
+        movies = data[:results] + data_2[:results]
+      end
     end
+  end
 end

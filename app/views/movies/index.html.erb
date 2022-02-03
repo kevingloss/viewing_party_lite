@@ -1,6 +1,6 @@
 <h1>Viewing Party Lite</h1>
 
-<h2>Top Rated Movies:</h2>
+<h2>@page_title</h2>
 
 
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
@@ -8,7 +8,7 @@
 <% @movies.each do |movie| %>
     <div id="movie-<%= movie.id %>">
         <p>
-            <%= movie.title %> |
+            <%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %> |
             Vote Average: <%= movie.vote_average %>
         <p>
     </div>
