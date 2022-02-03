@@ -2,6 +2,18 @@
 
 <h2><%= @movie.title %></h2>
 
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 
+<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_party_path(@user, @movie.id), method: :get%>
 
-<p>Placeholder: create button to create viewing party</p>
+<p><%= "Vote Average: #{@movie.vote_average}  |  Runtime: #{@movie.hr_min_runtime}  |  Genre(s): #{@movie.genres}"%></p>
+<hr>
+<h3>Summary</h3>
+<p><%= @movie.overview %></p>
+
+<h3>Cast</h3>
+<% @cast.each do |member| %>
+    <p><%= "#{member.name} as #{member.character}" %></p>
+<% end %>
+<hr>
+<h3>Reviews</h3>

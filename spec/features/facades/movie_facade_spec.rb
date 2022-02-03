@@ -8,5 +8,11 @@ RSpec.describe MovieFacade do
     expect(movies.first).to be_an_instance_of(Movie)
     expect(movies.first.title).to eq('Your Eyes Tell')
     expect(movies.first.vote_average).to eq(8.8)
+    expect(movies.count).to be <= 40
+  end
+
+  it 'creates movie poros by searching', :vcr do 
+    movies = MovieFacade.search_movies('The')
+    expect(movies.count).to eq(40)
   end
 end
