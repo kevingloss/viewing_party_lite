@@ -7,12 +7,12 @@ RSpec.describe 'Movie details page' do
     @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
   end
 
-  xit 'sees button to create viewing party' do
+  it 'sees button to create viewing party', :vcr do
+    visit user_movie_path(@kevin, 49051)
 
-  end
+    click_button "Create Viewing Party for The Hobbit: An Unexpected Journey"
 
-  xit 'has button to return to discover page' do
-
+    expect(current_path).to eq(new_user_movie_party_path(@kevin, 49051))
   end
 
   it 'sees details about the movie', :vcr do

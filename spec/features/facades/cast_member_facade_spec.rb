@@ -6,6 +6,6 @@ RSpec.describe CastMemberFacade do
     cast_members = CastMemberFacade.starring(49051)
     
     expect(cast_members.first).to be_an_instance_of(CastMember)
-    expect(movie.count).to be <= 10
+    expect(cast_members.count).to be <= 10
   end
 end

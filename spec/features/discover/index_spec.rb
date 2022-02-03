@@ -23,7 +23,7 @@ describe 'Discover Page' do
       expect(current_path).to eq(user_discover_index_path(@eldridge))
     end
 
-    it 'has a link from the movie details page' do 
+    it 'has a link from the movie details page', :vcr do 
         visit user_movie_path(@eldridge, 49051)
 
         click_button('Discover Page')

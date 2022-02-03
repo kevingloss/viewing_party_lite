@@ -6,7 +6,6 @@ RSpec.describe MovieDetailFacade do
     movie = MovieDetailFacade.movie_details(49051)
     
     expect(movie).to be_an_instance_of(MovieDetail)
-    expect(movie.count).to eq(1)
     expect(movie.title).to eq("The Hobbit: An Unexpected Journey")
   end
 end

@@ -4,7 +4,7 @@ RSpec.describe 'Movie Service' do
     describe 'class methods' do
         it 'returns the top rated movies', :vcr do
           movies = MovieService.top_rated_movies
-          expect(movies).to be_a(Hash)
+          expect(movies).to be_a(Array)
           expect(movies[0][:title]).to eq("Your Eyes Tell")
         end
 
