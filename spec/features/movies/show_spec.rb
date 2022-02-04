@@ -8,20 +8,20 @@ RSpec.describe 'Movie details page' do
   end
 
   it 'sees button to create viewing party', :vcr do
-    visit user_movie_path(@kevin, 49051)
+    visit user_movie_path(@kevin, 49_051)
 
-    click_button "Create Viewing Party for The Hobbit: An Unexpected Journey"
+    click_button 'Create Viewing Party for The Hobbit: An Unexpected Journey'
 
-    expect(current_path).to eq(new_user_movie_party_path(@kevin, 49051))
+    expect(current_path).to eq(new_user_movie_party_path(@kevin, 49_051))
   end
 
   it 'sees details about the movie', :vcr do
-    visit user_movie_path(@kevin, 49051)
+    visit user_movie_path(@kevin, 49_051)
 
-    summary = "Bilbo Baggins, a hobbit enjoying his quiet life"
-    review = "An other great master peace has been added the the Lord of The Rings"
-    
-    expect(page).to have_content("The Hobbit: An Unexpected Journey")
+    summary = 'Bilbo Baggins, a hobbit enjoying his quiet life'
+    review = 'An other great master peace has been added the the Lord of The Rings'
+
+    expect(page).to have_content('The Hobbit: An Unexpected Journey')
     expect(page).to have_content('7.3')
     expect(page).to have_content('Runtime: 2 hr 49 min')
     expect(page).to have_content('Adventure, Fantasy, Action')

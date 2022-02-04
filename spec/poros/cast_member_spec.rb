@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe CastMember do
-
   it 'has attributes' do
     data = {
       name: 'Ian McKellen',

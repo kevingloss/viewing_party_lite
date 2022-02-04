@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 04 Feb 2022 06:34:18 GMT
+      - Fri, 04 Feb 2022 15:55:14 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,23 +42,23 @@ http_interactions:
       X-Memc-Key:
       - e510acb2656f169e116f00d463b6e31a95d1d3c4
       X-Memc-Age:
-      - '13066'
+      - '1171'
       X-Memc-Expires:
-      - '2168'
+      - '13876'
       Etag:
-      - W/"b57d5e3092f18a71c8285acffe34f092"
+      - W/"720aa494ec4437364f5885135b426f99"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 264cccdb967e804907074b11d3a83242.cloudfront.net (CloudFront)
+      - 1.1 e158a5cd644f102abc630a9f56b59d78.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - "-RNUjEIE4zAy3c3cXxS1jGLS2r7-qSeUBTOpkVhvCjSFyY7I8U5gtw=="
+      - fQ7k8NoA4EJqpCVcL662OpEVEwr9z4-8YD69r7iY4YK3oUs8lnOutA==
       Age:
-      - '1615'
+      - '6396'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/gioXMobK8vbD6bcTsjKYKfgacNt.jpg","belongs_to_collection":{"id":121938,"name":"The
@@ -71,6 +71,6 @@ http_interactions:
         Films","origin_country":"NZ"}],"production_countries":[{"iso_3166_1":"NZ","name":"New
         Zealand"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2012-11-26","revenue":1021103568,"runtime":169,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"From
         the smallest beginnings come the greatest legends.","title":"The Hobbit: An
-        Unexpected Journey","video":false,"vote_average":7.3,"vote_count":15624}'
-  recorded_at: Fri, 04 Feb 2022 07:01:13 GMT
+        Unexpected Journey","video":false,"vote_average":7.3,"vote_count":15625}'
+  recorded_at: Fri, 04 Feb 2022 17:41:50 GMT
 recorded_with: VCR 6.0.0

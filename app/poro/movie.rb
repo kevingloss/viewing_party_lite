@@ -1,5 +1,4 @@
 class Movie
-
   attr_reader :id,
               :title,
               :overview,
