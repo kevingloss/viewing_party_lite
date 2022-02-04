@@ -11,5 +11,5 @@
     <p><%= party_user.party.date.strftime("%m-%d-%Y") %></p>
     <p><%= party_user.party.start_time.strftime("%I:%M %p") %></p>
     <p><%= party_user.status %></p>
-    <p><img src=<%= party_user.party_movie.poster_path %>, alt = 'Movie Poster'></p>
+    <p><img src=<%= party_user.party_movie.poster_path %>, alt = <%= "#{party_user.party_movie.title} - Movie Poster" %>></p>
 <% end %>
