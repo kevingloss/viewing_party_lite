@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieDetailFacade
   class << self
     def movie_details(movie_id)

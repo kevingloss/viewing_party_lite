@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieDetail
   attr_reader :id,
               :title,

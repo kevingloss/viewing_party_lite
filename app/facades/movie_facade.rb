@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieFacade
   class << self
     def find_top_rated_movies
