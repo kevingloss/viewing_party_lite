@@ -6,7 +6,7 @@ class MovieDetail
                 :vote_average,
                 :runtime,
                 :poster_path
-  
+
     def initialize(data)
       @id = data[:id]
       @title = data[:title]
@@ -20,11 +20,10 @@ class MovieDetail
     def genre_names(data)
         data[:genres].map do |genre|
             genre[:name]
-        end
+        end.join(", ")
     end
 
     def hr_min_runtime
-        "#{@runtime / 60} hr #{@runtime % 60} min"
+      "#{@runtime / 60} hr #{@runtime % 60} min"
     end
   end
-  
