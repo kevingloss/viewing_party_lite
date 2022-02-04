@@ -1,2 +1,29 @@
 <h1>Viewing Party Lite</h1>
 
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+
+<h2>Viewing Party Details</h2>
+
+<p>Movie Title: <%= @movie.title %>
+<%= form_with url: user_movie_parties_path(@user, @movie.id), method: :post, local: true do |f| %>
+  <p>
+    <%= f.label :duration %>
+    <%= f.number_field :duration, value: "#{@movie.runtime}"  %>
+  </p>
+  <p>  
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+  </p>
+  <p>
+    <%= f.label :start_time %>
+    <%= f.time_field :start_time %>
+  </p>
+  Invite Other Users
+  <p>
+    <% @users.each do |user| %>
+      <%= f.label "#{user.name} (#{user.email})" %>
+      <%= f.check_box user.name, {}, user.id, '' %>
+    <% end %>
+  </p>
+  <%= f.submit 'Create Party'%>
+<% end %>
