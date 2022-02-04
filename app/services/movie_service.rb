@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieService < ApiService
   class << self
     def top_rated_movies

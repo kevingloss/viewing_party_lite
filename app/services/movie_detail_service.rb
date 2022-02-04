@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieDetailService < ApiService
   class << self
     def find_movie(movie_id)

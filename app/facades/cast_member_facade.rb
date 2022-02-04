@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CastMemberFacade
   class << self
     def starring(movie_id)
