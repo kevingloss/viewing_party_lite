@@ -41,6 +41,5 @@ RSpec.describe 'User Show Page' do
 
         expect(page).to have_content('The Hobbit: An Unexpected Journey')
         expect(page).to have_content('Meet the Mobsters')
-
     end
 end
