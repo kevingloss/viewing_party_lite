@@ -6,16 +6,21 @@ class PartiesController < ApplicationController
     end
 
     def create 
-        user = User.find(params[:user_id])
-        party = Party.create(party_params)
-        PartyUser.create(user: user, party: party, status: :hosting)
-        User.except_user(user.id).each do |user|
-            if params["#{user.name}"] != ''
-                PartyUser.create(user: user, party: party, status: :invited)
+        user = User.find(params[:user_id]) 
+        party = Party.new(party_params)
+        movie = MovieDetailFacade.movie_details(params[:movie_id])
+        if params[:duration].to_i >= movie.runtime && party.save
+            PartyUser.create(user: user, party: party, status: :hosting)
+            User.except_user(user.id).each do |user|
+                if params["#{user.name}"] != ''
+                    PartyUser.create(user: user, party: party, status: :invited)
+                end
             end
+            redirect_to user_path(user)#, params: {movie_id: params[:movie_id]}
+        else  
+            flash[:alert] = 'Please check the duration is longer than the movie runtime.' 
+            redirect_to new_user_movie_party_path(user, party.movie_id)
         end
-        
-        redirect_to user_path(user), params: {movie_id: params[:movie_id]}
     end
 
     private 
