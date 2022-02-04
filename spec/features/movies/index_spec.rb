@@ -36,6 +36,16 @@ RSpec.describe 'Movies index' do
     expect(page).to have_content('Godfather I')
   end
 
+  it 'will return user to discover page if search is left empty', :vcr do 
+    visit user_discover_index_path(@eldridge)
+
+    fill_in(:filter, with: '')
+    click_on :search 
+    
+    expect(current_path).to eq(user_discover_index_path(@eldridge))
+    expect(page).to have_content('Please enter a valid search query or check out the top rated movies.')
+  end
+
   it 'has links to movie show page', :vcr do
     visit "users/#{@kevin.id}/movies?filter=top_rated"
 
