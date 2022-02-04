@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   validates_presence_of :name, :email
   validates :email, email: true, uniqueness: true
+
+  def self.except_user(id)
+    all.where.not(id: id)
+  end
 end

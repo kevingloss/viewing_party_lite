@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
     def show 
         @user = User.find(params[:id])
+        @party_users = PartyUser.attending(@user)
     end
 
     def create

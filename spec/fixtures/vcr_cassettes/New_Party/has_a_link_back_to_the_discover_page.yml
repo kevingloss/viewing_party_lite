@@ -52,13 +52,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a44b9db7a2d103360945ab52619e5016.cloudfront.net (CloudFront)
+      - 1.1 235fa9476ee502b13c0801d1fa3b57a2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - n13LODaD1p2RIOgAJCYZMvPrakhRRMFSpUsI8blzBPt900r1r0fXEQ==
+      - n9DVmi0lKqxXMjpRivvELfOtHYhnOYGuAKFXr8225IS7YV_zK2YGIA==
       Age:
-      - '1620'
+      - '1617'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/gioXMobK8vbD6bcTsjKYKfgacNt.jpg","belongs_to_collection":{"id":121938,"name":"The
@@ -72,5 +72,5 @@ http_interactions:
         Zealand"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2012-11-26","revenue":1021103568,"runtime":169,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"From
         the smallest beginnings come the greatest legends.","title":"The Hobbit: An
         Unexpected Journey","video":false,"vote_average":7.3,"vote_count":15624}'
-  recorded_at: Fri, 04 Feb 2022 07:01:17 GMT
+  recorded_at: Fri, 04 Feb 2022 07:01:15 GMT
 recorded_with: VCR 6.0.0

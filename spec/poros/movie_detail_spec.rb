@@ -22,7 +22,7 @@ RSpec.describe MovieDetail do
     expect(movie.vote_average).to eq(9)
     expect(movie.runtime).to eq(160)
     expect(movie.genres).to eq("adventure, fantasy")
-    expect(movie.poster_path).to eq('https://image.tmdb.org/t/p/original/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg')
+    expect(movie.poster_path).to eq('https://image.tmdb.org/t/p/w300/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg')
   end
 
   it '#hr_min_runtime' do

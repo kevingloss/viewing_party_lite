@@ -1,0 +1,289 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49051?api_key=<encrypted_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 04 Feb 2022 06:34:18 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - e510acb2656f169e116f00d463b6e31a95d1d3c4
+      X-Memc-Age:
+      - '13066'
+      X-Memc-Expires:
+      - '2168'
+      Etag:
+      - W/"b57d5e3092f18a71c8285acffe34f092"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 48a6ccbb0ddb052ab512a3422295bd38.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - b6336wahWPR5rlYkFE6QkXmZBzU60S5iHoNyfPzXwFmvaFmNRab1qg==
+      Age:
+      - '1618'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/gioXMobK8vbD6bcTsjKYKfgacNt.jpg","belongs_to_collection":{"id":121938,"name":"The
+        Hobbit Collection","poster_path":"/gwHNIXA6YeYsI9XgX4g1UmLDCxo.jpg","backdrop_path":"/sLy2GcCPrZcMlfaSSvoGeThWXBA.jpg"},"budget":250000000,"genres":[{"id":12,"name":"Adventure"},{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"}],"homepage":"http://www.thehobbit.com/","id":49051,"imdb_id":"tt0903624","original_language":"en","original_title":"The
+        Hobbit: An Unexpected Journey","overview":"Bilbo Baggins, a hobbit enjoying
+        his quiet life, is swept into an epic quest by Gandalf the Grey and thirteen
+        dwarves who seek to reclaim their mountain home from Smaug, the dragon.","popularity":127.533,"poster_path":"/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg","production_companies":[{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
+        Bros. Pictures","origin_country":"US"},{"id":21,"logo_path":"/aOWKh4gkNrfFZ3Ep7n0ckPhoGb5.png","name":"Metro-Goldwyn-Mayer","origin_country":"US"},{"id":12,"logo_path":"/iaYpEp3LQmb8AfAtmTvpqd4149c.png","name":"New
+        Line Cinema","origin_country":"US"},{"id":11,"logo_path":"/6FAuASQHybRkZUk08p9PzSs9ezM.png","name":"WingNut
+        Films","origin_country":"NZ"}],"production_countries":[{"iso_3166_1":"NZ","name":"New
+        Zealand"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2012-11-26","revenue":1021103568,"runtime":169,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"From
+        the smallest beginnings come the greatest legends.","title":"The Hobbit: An
+        Unexpected Journey","video":false,"vote_average":7.3,"vote_count":15624}'
+  recorded_at: Fri, 04 Feb 2022 07:01:16 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49051?api_key=<encrypted_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 04 Feb 2022 06:34:18 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - e510acb2656f169e116f00d463b6e31a95d1d3c4
+      X-Memc-Age:
+      - '13066'
+      X-Memc-Expires:
+      - '2168'
+      Etag:
+      - W/"b57d5e3092f18a71c8285acffe34f092"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e1b5abb53c407f0a057625c46693461c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - o0ucwKLlLl5Q21pQD48WVzVBcNs06_fDvPpSWC7Z02suvGSnzukz5Q==
+      Age:
+      - '1618'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/gioXMobK8vbD6bcTsjKYKfgacNt.jpg","belongs_to_collection":{"id":121938,"name":"The
+        Hobbit Collection","poster_path":"/gwHNIXA6YeYsI9XgX4g1UmLDCxo.jpg","backdrop_path":"/sLy2GcCPrZcMlfaSSvoGeThWXBA.jpg"},"budget":250000000,"genres":[{"id":12,"name":"Adventure"},{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"}],"homepage":"http://www.thehobbit.com/","id":49051,"imdb_id":"tt0903624","original_language":"en","original_title":"The
+        Hobbit: An Unexpected Journey","overview":"Bilbo Baggins, a hobbit enjoying
+        his quiet life, is swept into an epic quest by Gandalf the Grey and thirteen
+        dwarves who seek to reclaim their mountain home from Smaug, the dragon.","popularity":127.533,"poster_path":"/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg","production_companies":[{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
+        Bros. Pictures","origin_country":"US"},{"id":21,"logo_path":"/aOWKh4gkNrfFZ3Ep7n0ckPhoGb5.png","name":"Metro-Goldwyn-Mayer","origin_country":"US"},{"id":12,"logo_path":"/iaYpEp3LQmb8AfAtmTvpqd4149c.png","name":"New
+        Line Cinema","origin_country":"US"},{"id":11,"logo_path":"/6FAuASQHybRkZUk08p9PzSs9ezM.png","name":"WingNut
+        Films","origin_country":"NZ"}],"production_countries":[{"iso_3166_1":"NZ","name":"New
+        Zealand"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2012-11-26","revenue":1021103568,"runtime":169,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"From
+        the smallest beginnings come the greatest legends.","title":"The Hobbit: An
+        Unexpected Journey","video":false,"vote_average":7.3,"vote_count":15624}'
+  recorded_at: Fri, 04 Feb 2022 07:01:16 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/57021?api_key=<encrypted_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 04 Feb 2022 06:34:57 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - ab8da8eb418a923d53b02dc8c5105908644d0c91
+      X-Memc-Age:
+      - '12236'
+      X-Memc-Expires:
+      - '3833'
+      Etag:
+      - W/"aa7c8f9b4473475b512ab0635c995b60"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e158a5cd644f102abc630a9f56b59d78.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - G7QoY5hUEV1A9YRdyAUiH1uTcNcfyRygvEjGZNA0mccUduBJeOzg6Q==
+      Age:
+      - '1579'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"},{"id":10402,"name":"Music"},{"id":53,"name":"Thriller"}],"homepage":"http://www.meetthemobsters.com/","id":57021,"imdb_id":"tt0389053","original_language":"en","original_title":"Meet
+        the Mobsters","overview":"Down-and-out lounge singer Johnny Slade is hired
+        by a mystery man to open a hot new club, the catch being he''s given a new--and
+        terrible--song to sing each night. Noticing that whenever he sings one a new
+        crime is committed, Johnny gradually realizes his songwriter-benefactor is
+        a powerful mob boss in hiding and his \"Greatest Hits\" are the only way the
+        man can give orders to his crew...","popularity":2.148,"poster_path":"/6b6QDBVEvUsCOIxybgfzcyOb4Pw.jpg","production_companies":[],"production_countries":[],"release_date":"2005-08-10","revenue":0,"runtime":88,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"German","iso_639_1":"de","name":"Deutsch"}],"status":"Released","tagline":"A
+        little talent... can be a dangerous thing","title":"Meet the Mobsters","video":false,"vote_average":7.0,"vote_count":4}'
+  recorded_at: Fri, 04 Feb 2022 07:01:16 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/57021?api_key=<encrypted_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 04 Feb 2022 06:34:57 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - ab8da8eb418a923d53b02dc8c5105908644d0c91
+      X-Memc-Age:
+      - '12236'
+      X-Memc-Expires:
+      - '3833'
+      Etag:
+      - W/"aa7c8f9b4473475b512ab0635c995b60"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c4fb40b7909e4dd897bba2e297b284e6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - C3z8Vk5zzu2tNfxYIg9uXokxdJV0OeLKaasMwCGNCOy8VmBdtDvY0g==
+      Age:
+      - '1579'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"},{"id":10402,"name":"Music"},{"id":53,"name":"Thriller"}],"homepage":"http://www.meetthemobsters.com/","id":57021,"imdb_id":"tt0389053","original_language":"en","original_title":"Meet
+        the Mobsters","overview":"Down-and-out lounge singer Johnny Slade is hired
+        by a mystery man to open a hot new club, the catch being he''s given a new--and
+        terrible--song to sing each night. Noticing that whenever he sings one a new
+        crime is committed, Johnny gradually realizes his songwriter-benefactor is
+        a powerful mob boss in hiding and his \"Greatest Hits\" are the only way the
+        man can give orders to his crew...","popularity":2.148,"poster_path":"/6b6QDBVEvUsCOIxybgfzcyOb4Pw.jpg","production_companies":[],"production_countries":[],"release_date":"2005-08-10","revenue":0,"runtime":88,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"German","iso_639_1":"de","name":"Deutsch"}],"status":"Released","tagline":"A
+        little talent... can be a dangerous thing","title":"Meet the Mobsters","video":false,"vote_average":7.0,"vote_count":4}'
+  recorded_at: Fri, 04 Feb 2022 07:01:16 GMT
+recorded_with: VCR 6.0.0
