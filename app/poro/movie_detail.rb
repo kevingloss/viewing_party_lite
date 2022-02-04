@@ -14,7 +14,7 @@ class MovieDetail
       @runtime = data[:runtime]
       @overview = data[:overview]
       @vote_average = data[:vote_average]
-      @poster_path = "https://image.tmdb.org/t/p/original#{data[:poster_path]}"
+      @poster_path = "https://image.tmdb.org/t/p/w300#{data[:poster_path]}"
     end
 
     def genre_names(data)
