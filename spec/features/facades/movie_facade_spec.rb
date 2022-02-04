@@ -14,5 +14,10 @@ RSpec.describe MovieFacade do
   it 'creates movie poros by searching', :vcr do 
     movies = MovieFacade.search_movies('The')
     expect(movies.count).to eq(40)
+    expect(movies.first).to be_an_instance_of(Movie)
+
+    movies = MovieFacade.search_movies('Sharknado')
+    expect(movies.count).to eq(11)
+    expect(movies.first).to be_an_instance_of(Movie)
   end
 end
