@@ -4,6 +4,6 @@ class Review
 
   def initialize(data)
     @author = data[:author]
-    @eval = data[:eval]
+    @eval = data[:content]
   end
 end

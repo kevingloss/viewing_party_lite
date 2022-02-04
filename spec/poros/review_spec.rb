@@ -5,7 +5,7 @@ RSpec.describe Review do
   it 'has attributes' do
     data = {
       author: 'critic 1',
-      eval: 'good movie'
+      content: 'good movie'
     }
 
     review = Review.new(data)

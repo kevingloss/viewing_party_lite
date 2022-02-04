@@ -21,4 +21,8 @@
     <p><%= "#{member.name} as #{member.character}" %></p>
 <% end %>
 <hr>
-<h3>Reviews</h3>
+<h3><%= @reviews.count %> Reviews</h3>
+<% @reviews.each do |review| %>
+<p><%= review.author %></p>
+<p><%= review.eval %></p>
+<% end  %>
