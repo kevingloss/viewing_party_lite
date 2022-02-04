@@ -52,13 +52,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 c29390732f5bc4b2c7832623ae6e492e.cloudfront.net (CloudFront)
+      - 1.1 045f1e1f031241f3808c557a2b5d6b0a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - SThj7_FOhICAKx3hD6AYf2sohUR_hh3bvo0Gf9QgVLEcRfmP9PKeHw==
+      - TTdNILfcMCZ_ECN3EJkQZj1KngUB6ReiDq5jHibUOn3QGegODbncSw==
       Age:
-      - '6388'
+      - '7731'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/brJaRHLNWsLNSB8AcYGqO5HyJ1A.jpg","belongs_to_collection":{"id":85861,"name":"Beverly
@@ -76,5 +76,5 @@ http_interactions:
         Simpson/Jerry Bruckheimer Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1984-11-30","revenue":316360478,"runtime":105,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
         Heat Is On!","title":"Beverly Hills Cop","video":false,"vote_average":7.2,"vote_count":3081}'
-  recorded_at: Fri, 04 Feb 2022 17:41:55 GMT
+  recorded_at: Fri, 04 Feb 2022 18:04:19 GMT
 recorded_with: VCR 6.0.0
