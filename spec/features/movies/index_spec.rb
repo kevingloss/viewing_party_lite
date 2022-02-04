@@ -8,10 +8,9 @@ RSpec.describe 'Movies index' do
   end
 
   it 'has link to discover path', :vcr do
-
     visit user_discover_index_path(@eldridge)
 
-    click_button("Top Rated Movies")
+    click_button('Top Rated Movies')
 
     expect(current_path).to eq(user_movies_path(@eldridge))
   end
@@ -19,11 +18,11 @@ RSpec.describe 'Movies index' do
   it 'top rated movies', :vcr do
     visit user_discover_index_path(@eldridge)
 
-    click_button("Top Rated Movies")
+    click_button('Top Rated Movies')
 
-    within("#movie-730154") do
-      expect(page).to have_content("Your Eyes Tell")
-      expect(page).to have_content("Vote Average: 8.8")
+    within('#movie-730154') do
+      expect(page).to have_content('Your Eyes Tell')
+      expect(page).to have_content('Vote Average: 8.8')
     end
   end
 
@@ -36,12 +35,12 @@ RSpec.describe 'Movies index' do
     expect(page).to have_content('Godfather I')
   end
 
-  it 'will return user to discover page if search is left empty', :vcr do 
+  it 'will return user to discover page if search is left empty', :vcr do
     visit user_discover_index_path(@eldridge)
 
     fill_in(:filter, with: '')
-    click_on :search 
-    
+    click_on :search
+
     expect(current_path).to eq(user_discover_index_path(@eldridge))
     expect(page).to have_content('Please enter a valid search query or check out the top rated movies.')
   end
@@ -49,8 +48,8 @@ RSpec.describe 'Movies index' do
   it 'has links to movie show page', :vcr do
     visit "users/#{@kevin.id}/movies?filter=top_rated"
 
-    click_on "Your Eyes Tell"
+    click_on 'Your Eyes Tell'
 
-    expect(current_path).to eq(user_movie_path(@kevin, 730154))
+    expect(current_path).to eq(user_movie_path(@kevin, 730_154))
   end
 end

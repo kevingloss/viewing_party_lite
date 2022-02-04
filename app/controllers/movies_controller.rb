@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
       @movies = MovieFacade.find_top_rated_movies
       @page_title = 'Top Rated Movies'
     elsif params[:filter]
-      @movies =  MovieFacade.search_movies(params[:filter])
+      @movies = MovieFacade.search_movies(params[:filter])
       @page_title = "Search results for: #{params[:filter]}"
     end
   end

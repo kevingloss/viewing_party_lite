@@ -1,33 +1,33 @@
 require 'rails_helper'
 
 describe 'Discover Page' do
-    before :each do
-        @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com')
-        @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com')
-        @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
-    end
+  before :each do
+    @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com')
+    @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com')
+    @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
+  end
 
-    it 'should have the app name and discover movies' do
-        visit user_discover_index_path(@kevin)
+  it 'should have the app name and discover movies' do
+    visit user_discover_index_path(@kevin)
 
-        expect(page).to have_content("Viewing Party Lite")
-        expect(page).to have_content("Discover Movies")
-    end
+    expect(page).to have_content('Viewing Party Lite')
+    expect(page).to have_content('Discover Movies')
+  end
 
-    it 'has link from top rated movies page', :vcr do
-      visit user_discover_index_path(@eldridge)
+  it 'has link from top rated movies page', :vcr do
+    visit user_discover_index_path(@eldridge)
 
-      click_button('Top Rated Movies')
-      click_button('Discover Page')
+    click_button('Top Rated Movies')
+    click_button('Discover Page')
 
-      expect(current_path).to eq(user_discover_index_path(@eldridge))
-    end
+    expect(current_path).to eq(user_discover_index_path(@eldridge))
+  end
 
-    it 'has a link from the movie details page', :vcr do 
-        visit user_movie_path(@eldridge, 49051)
+  it 'has a link from the movie details page', :vcr do
+    visit user_movie_path(@eldridge, 49_051)
 
-        click_button('Discover Page')
+    click_button('Discover Page')
 
-        expect(current_path).to eq(user_discover_index_path(@eldridge))
-    end
+    expect(current_path).to eq(user_discover_index_path(@eldridge))
+  end
 end

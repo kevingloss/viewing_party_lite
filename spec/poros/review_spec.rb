@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Review do
-
   it 'has attributes' do
     data = {
       author: 'critic 1',
