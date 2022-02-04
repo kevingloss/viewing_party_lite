@@ -6,7 +6,8 @@ RSpec.describe Party do
     it {should have_many(:users).through(:party_users)}
   end
 
-  describe 'validations' do
+  describe 'validations', :vcr do
+  
     it {should validate_presence_of :duration}
     it {should validate_presence_of :date}
     it {should validate_presence_of :start_time}
