@@ -32,21 +32,82 @@ RSpec.describe 'New User' do
     expect(page).to have_content(user.name)
   end
 
-  it 'has a sad path for invalid data' do
-    visit new_user_path
+  describe 'sad paths' do 
+    it 'has a sad path for invalid email' do
+      visit new_user_path
+  
+      fill_in(:user_name, with: 'John')
+      fill_in(:user_email, with: 'johnnyboy')
+      fill_in(:user_password, with: 'pw123')
+      fill_in(:user_password_confirmation, with: 'pw123')
+      click_button 'Create User'
+  
+      user = User.find_by(name: 'John')
+  
+      expect(current_path).to eq(new_user_path)
+      expect(page).to have_content(['Email is invalid'])
+    end
 
-    fill_in(:user_name, with: 'John')
-    fill_in(:user_email, with: 'johnnyboy')
-    fill_in(:user_password, with: 'pw123')
-    fill_in(:user_password_confirmation, with: 'pw123')
-    click_button 'Create User'
+    it 'has a sad path for non unique email' do
+      visit new_user_path
+  
+      fill_in(:user_name, with: 'John')
+      fill_in(:user_email, with: 'kevin@gmail.com')
+      fill_in(:user_password, with: 'pw123')
+      fill_in(:user_password_confirmation, with: 'pw123')
+      click_button 'Create User'
+  
+      user = User.find_by(name: 'John')
+  
+      expect(current_path).to eq(new_user_path)
+      expect(page).to have_content(["Email has already been taken"])
+    end
 
-    user = User.find_by(name: 'John')
+    it 'has a sad path for matching passwords' do
+      visit new_user_path
+  
+      fill_in(:user_name, with: 'John')
+      fill_in(:user_email, with: 'jonnyboy@gmail.com')
+      fill_in(:user_password, with: 'pw123')
+      fill_in(:user_password_confirmation, with: 'pw12')
+      click_button 'Create User'
+  
+      user = User.find_by(name: 'John')
+  
+      expect(current_path).to eq(new_user_path)
+      expect(page).to have_content(["Password confirmation doesn't match Password"])
+    end    
 
-    expect(current_path).to eq(new_user_path)
-    expect(page).to have_content(['Email is invalid'])
+    it 'has a sad path for the name being blank' do
+      visit new_user_path
+  
+      fill_in(:user_name, with: '')
+      fill_in(:user_email, with: 'jonnyboy@gmail.com')
+      fill_in(:user_password, with: 'pw123')
+      fill_in(:user_password_confirmation, with: 'pw123')
+      click_button 'Create User'
+  
+      user = User.find_by(name: 'John')
+  
+      expect(current_path).to eq(new_user_path)
+      expect(page).to have_content(["Name can't be blank"])
+    end
+
+    it 'has a sad path for the name missing' do
+      visit new_user_path
+  
+      fill_in(:user_email, with: 'jonnyboy@gmail.com')
+      fill_in(:user_password, with: 'pw123')
+      fill_in(:user_password_confirmation, with: 'pw123')
+      click_button 'Create User'
+  
+      user = User.find_by(name: 'John')
+  
+      expect(current_path).to eq(new_user_path)
+      expect(page).to have_content(["Name can't be blank"])
+    end
   end
-
+  
   it 'has a link to the landing page' do
     visit new_user_path
 
