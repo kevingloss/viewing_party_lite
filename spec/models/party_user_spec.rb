@@ -6,9 +6,9 @@ RSpec.describe PartyUser do
   before :each do
     @party = Party.create(duration: 180, date: '2022-02-03', start_time: '21:47', movie_id: 49_051)
     @party_2 = Party.create(duration: 120, date: '2022-02-14', start_time: '19:47', movie_id: 90)
-    @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com')
-    @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com')
-    @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
+    @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com', password: '123', password_confirmation: '123')
+    @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com', password: '123', password_confirmation: '123')
+    @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com', password: '123', password_confirmation: '123')
     @pu1 = PartyUser.create(user: @kevin, party: @party, status: :hosting)
     @pu2 = PartyUser.create(user: @eldridge, party: @party, status: :invited)
     @pu3 = PartyUser.create(user: @eldridge, party: @party_2, status: :invited)

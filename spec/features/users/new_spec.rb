@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'New User' do
   before :each do
-    @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com')
-    @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com')
-    @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
+    @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com', password: '123', password_confirmation: '123')
+    @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com', password: '123', password_confirmation: '123')
+    @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com', password: '123', password_confirmation: '123')
   end
 
   it 'should be have a button from the landing page' do
@@ -17,11 +17,13 @@ RSpec.describe 'New User' do
     expect(current_path).to eq(new_user_path)
   end
 
-  it 'can create a new user with valid input' do
+  it 'can register a new user with valid input' do
     visit new_user_path
 
     fill_in(:user_name, with: 'John')
     fill_in(:user_email, with: 'john@gmail.com')
+    fill_in(:user_password, with: 'pw123')
+    fill_in(:user_password_confirmation, with: 'pw123')
     click_button 'Create User'
 
     user = User.find_by(name: 'John')
@@ -35,6 +37,8 @@ RSpec.describe 'New User' do
 
     fill_in(:user_name, with: 'John')
     fill_in(:user_email, with: 'johnnyboy')
+    fill_in(:user_password, with: 'pw123')
+    fill_in(:user_password_confirmation, with: 'pw123')
     click_button 'Create User'
 
     user = User.find_by(name: 'John')

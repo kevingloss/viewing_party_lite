@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'Movie details page' do
   before :each do
-    @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com')
-    @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com')
-    @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
+    @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com', password: '123', password_confirmation: '123')
+    @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com', password: '123', password_confirmation: '123')
+    @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com', password: '123', password_confirmation: '123')
   end
 
   it 'sees button to create viewing party', :vcr do
