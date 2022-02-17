@@ -23,7 +23,7 @@ RSpec.describe User do
 
     it 'does not show the users password' do 
       expect(@kevin).to_not have_attribute(:password)
-      expect(@kevin.password_digest).to_not eq('password123')
+      expect(@kevin.password_digest).to_not eq('123')
     end
   end
 
