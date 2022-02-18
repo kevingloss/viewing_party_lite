@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   validates_presence_of :name, :email
   validates :email, email: true, uniqueness: true
+  enum role: %w(visitor user admin)
 
   def self.except_user(id)
     all.where.not(id: id)
