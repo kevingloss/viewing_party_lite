@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :require_user, only: :show
+  
   def index
     @users = User.all
   end
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
 
     if user.save
       flash[:success] = "Welcome, #{user.name}!"
+      user.role = :user
       session[:user_id] = user.id
       redirect_to dashboard_path
     else
