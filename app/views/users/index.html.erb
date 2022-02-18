@@ -5,5 +5,5 @@
 
 <h3>Existing Users</h3>
 <% @users.each do |user| %>
-    <p><%= link_to "#{user.name} | #{user.email}", user_path(user) %></p>
+    <p><%= link_to "#{user.name} | #{user.email}", dashboard_path %></p>
 <% end %>

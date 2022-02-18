@@ -7,7 +7,7 @@ RSpec.describe 'Movie Service' do
     it 'returns the top rated movies', :vcr do
       movies = MovieService.top_rated_movies
       expect(movies).to be_a(Array)
-      expect(movies[0][:title]).to eq('Your Eyes Tell')
+      expect(movies[0][:title]).to eq('Dilwale Dulhania Le Jayenge')
     end
 
     it 'searches for movies', :vcr do

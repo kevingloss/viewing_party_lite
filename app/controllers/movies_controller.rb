@@ -2,10 +2,10 @@
 
 class MoviesController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
     if params[:filter] == ''
       flash[:alert] = 'Please enter a valid search query or check out the top rated movies.'
-      redirect_to user_discover_index_path(@user)
+      redirect_to discover_index_path
     elsif params[:filter] == 'top_rated'
       @movies = MovieFacade.find_top_rated_movies
       @page_title = 'Top Rated Movies'
@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
     @movie = MovieDetailFacade.movie_details(params[:id])
     @cast = CastMemberFacade.starring(@movie.id)
     @reviews = ReviewFacade.author_review(@movie.id)

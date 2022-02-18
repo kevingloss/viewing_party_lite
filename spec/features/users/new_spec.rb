@@ -7,6 +7,11 @@ RSpec.describe 'New User' do
     @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com', password: '123', password_confirmation: '123')
     @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com', password: '123', password_confirmation: '123')
     @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com', password: '123', password_confirmation: '123')
+
+    visit login_path
+    fill_in :email, with: 'kevin@gmail.com'
+    fill_in :password, with: '123'
+    click_on 'Log In'
   end
 
   it 'should be have a button from the landing page' do
@@ -28,7 +33,7 @@ RSpec.describe 'New User' do
 
     user = User.find_by(name: 'John')
 
-    expect(current_path).to eq(user_path(user))
+    expect(current_path).to eq(dashboard_path)
     expect(page).to have_content(user.name)
   end
 

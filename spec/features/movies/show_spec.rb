@@ -7,18 +7,23 @@ RSpec.describe 'Movie details page' do
     @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com', password: '123', password_confirmation: '123')
     @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com', password: '123', password_confirmation: '123')
     @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com', password: '123', password_confirmation: '123')
+
+    visit login_path
+    fill_in :email, with: 'kevin@gmail.com'
+    fill_in :password, with: '123'
+    click_on 'Log In'
   end
 
   it 'sees button to create viewing party', :vcr do
-    visit user_movie_path(@kevin, 49_051)
+    visit movie_path(49_051)
 
     click_button 'Create Viewing Party for The Hobbit: An Unexpected Journey'
 
-    expect(current_path).to eq(new_user_movie_party_path(@kevin, 49_051))
+    expect(current_path).to eq(new_movie_party_path(49_051))
   end
 
   it 'sees details about the movie', :vcr do
-    visit user_movie_path(@kevin, 49_051)
+    visit movie_path(49_051)
 
     summary = 'Bilbo Baggins, a hobbit enjoying his quiet life'
     review = 'An other great master peace has been added the the Lord of The Rings'

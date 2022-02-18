@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Discover Page' do
+describe 'Login Page' do
   before :each do
     @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com', password: '123', password_confirmation: '123')
     @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com', password: '123', password_confirmation: '123')
@@ -19,7 +19,7 @@ describe 'Discover Page' do
 
     click_on "Log In"
 
-    expect(current_path).to eq(user_path(@kevin))
+    expect(current_path).to eq(dashboard_path)
 
     expect(page).to have_content("Welcome, #{@kevin.name}")
   end

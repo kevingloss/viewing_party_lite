@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
 class PartiesController < ApplicationController
+  before_action :require_user 
+  
   def new
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
     @users = User.except_user(@user.id)
     @movie = MovieDetailFacade.movie_details(params[:movie_id])
   end
 
   def create
-    user = User.find(params[:user_id])
+    user = User.find(session[:user_id])
     party = Party.new(party_params)
     movie = MovieDetailFacade.movie_details(params[:movie_id])
     if params[:duration].to_i >= movie.runtime && party.save
@@ -16,10 +18,10 @@ class PartiesController < ApplicationController
       User.except_user(user.id).each do |user|
         PartyUser.create(user: user, party: party, status: :invited) if params[user.name.to_s] != ''
       end
-      redirect_to user_path(user) # , params: {movie_id: params[:movie_id]}
+      redirect_to dashboard_path # , params: {movie_id: params[:movie_id]}
     else
       flash[:alert] = 'Please check the duration is longer than the movie runtime.'
-      redirect_to new_user_movie_party_path(user, party.movie_id)
+      redirect_to new_movie_party_path(party.movie_id)
     end
   end
 

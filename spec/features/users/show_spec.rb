@@ -13,35 +13,40 @@ RSpec.describe 'User Show Page' do
     @pu2 = PartyUser.create(user: @eldridge, party: party, status: :invited)
     @pu3 = PartyUser.create(user: @eldridge, party: party_2, status: :invited)
     @pu4 = PartyUser.create(user: @suzie, party: party_2, status: :hosting)
+
+    visit login_path
+    fill_in :email, with: 'kevin@gmail.com'
+    fill_in :password, with: '123'
+    click_on 'Log In'
   end
 
   it 'should have the users name', :vcr do
-    visit user_path(@eldridge)
+    visit dashboard_path
 
-    expect(page).to have_content("#{@eldridge.name}'s Dashboard")
-    expect(page).to_not have_content("#{@kevin.name}'s Dashboard")
+    expect(page).to have_content("#{@kevin.name}'s Dashboard")
+    expect(page).to_not have_content("#{@eldridge.name}'s Dashboard")
   end
 
   it 'has a button to discover movies', :vcr do
-    visit user_path(@eldridge)
+    visit dashboard_path
 
     click_on 'Discover Movies'
 
-    expect(current_path).to eq(user_discover_index_path(@eldridge))
+    expect(current_path).to eq(discover_index_path)
   end
 
   it 'links to show page from landing page', :vcr do
     visit root_path
 
-    click_link "#{@eldridge.name} | #{@eldridge.email}"
+    click_link "#{@kevin.name} | #{@kevin.email}"
 
-    expect(current_path).to eq(user_path(@eldridge))
+    expect(current_path).to eq(dashboard_path)
   end
 
   it 'has the parties the user is hosting/invited to', :vcr do
-    visit user_path(@eldridge)
+    visit dashboard_path
 
     expect(page).to have_content('The Hobbit: An Unexpected Journey')
-    expect(page).to have_content('Meet the Mobsters')
+    expect(page).to_not have_content('Meet the Mobsters')
   end
 end
