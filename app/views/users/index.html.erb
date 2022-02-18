@@ -7,7 +7,10 @@
   <%= link_to 'Log In', login_path %>
 <% end %>
 
-<h3>Existing Users</h3>
-<% @users.each do |user| %>
-    <p><%= link_to "#{user.name} | #{user.email}", dashboard_path %></p>
+
+<% if current_user %>
+    <h3>Existing Users</h3>
+    <% @users.each do |user| %>
+        <p><%= "#{user.name} | #{user.email}" %></p>
+    <% end %>
 <% end %>
