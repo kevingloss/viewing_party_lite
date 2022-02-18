@@ -35,14 +35,6 @@ RSpec.describe 'User Show Page' do
     expect(current_path).to eq(discover_index_path)
   end
 
-  it 'links to show page from landing page', :vcr do
-    visit root_path
-
-    click_link "#{@kevin.name} | #{@kevin.email}"
-
-    expect(current_path).to eq(dashboard_path)
-  end
-
   it 'has the parties the user is hosting/invited to', :vcr do
     visit dashboard_path
 
