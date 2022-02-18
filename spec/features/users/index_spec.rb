@@ -37,4 +37,14 @@ RSpec.describe 'Landing Page' do
 
     expect(page).to have_content('Log In')
   end
+
+  it 'does not show users if not logged in' do 
+    visit root_path
+
+    click_link 'Logout'
+
+    expect(page).to_not have_content(@eldridge.name)
+    expect(page).to_not have_content(@kevin.name)
+    expect(page).to_not have_content(@suzie.name)
+  end
 end
