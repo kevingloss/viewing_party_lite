@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 class PartiesController < ApplicationController
-  before_action :require_user 
-  
   def new
-    @user = User.find(session[:user_id])
-    @users = User.except_user(@user.id)
-    @movie = MovieDetailFacade.movie_details(params[:movie_id])
+    if !current_user
+      flash[:alert] = 'you must be logged in/registered'
+      redirect_to movie_path(params[:movie_id])
+    else
+      @user = User.find(session[:user_id])
+      @users = User.except_user(@user.id)
+      @movie = MovieDetailFacade.movie_details(params[:movie_id])
+    end
   end
 
   def create

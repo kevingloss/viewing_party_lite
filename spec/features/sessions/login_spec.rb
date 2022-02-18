@@ -36,4 +36,12 @@ describe 'Login Page' do
   
     expect(page).to have_content("Sorry, your credentials are bad.")
   end
+
+  it 'cannot go to dashboard without logging in' do 
+    visit root_path
+    visit dashboard_path
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('you must be logged in')
+  end
 end
