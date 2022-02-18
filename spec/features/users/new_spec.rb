@@ -14,8 +14,9 @@ RSpec.describe 'New User' do
     click_on 'Log In'
   end
 
-  it 'should be have a button from the landing page' do
+  it 'should have a button from the landing page' do
     visit root_path
+    click_on 'Logout'
 
     click_link 'Create New User'
 
